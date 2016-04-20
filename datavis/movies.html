@@ -1,17 +1,15 @@
+<!DOCTYPE html>
 <html> 
     <head> 
-        <meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+        <!--<meta http-equiv="content-type" content="text/html; charset=utf-8" /> --> 
         <title> Movies </title> 
         <!-- Inclusões das bibliotecas JavaScript para o Highcharts
  --> 
         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script> 
-        <script src="http://code.highcharts.com/highcharts.js"></script>     
-    </head> 
-    <body> 
-    	<div id="container" style="width:100%; height:400px;"></div>
-        <script> 
+        <script src="http://code.highcharts.com/highcharts.js"></script>     	
+    	<script> 
 			$(function () {  
-				$(‘#container’).highcharts({
+				$('#container').highcharts({
 					chart: {
 						type: 'column'
 					},
@@ -20,11 +18,6 @@
 					},
 					xAxis: {
 						categories: ['Worldwide', 'Domestic', 'Brazil', 'Argentina']
-					},
-					yAxis: {
-						title: {
-							text: 'Values'
-						}
 					},
 					series: [{
 						name: 'Deadpool',
@@ -44,7 +37,42 @@
 					}]
 				}); 
 			});
+		</script>
+    	<script> 
+			$(function () {  
+				$('#container2').highcharts({
+					chart: {
+						type: 'line'
+					},
+					title: {
+						text: 'First Week'
+					},
+					xAxis: {
+						categories: ['Sexta', 'Sabado', 'Domingo', 'Segunda', 'Terca', 'Quarta', 'Quinta']
+					},
+					series: [{
+						name: 'Deadpool',
+						data: [47335592, 42508025, 42591022, 19759214, 11559606, 8617589, 8023800] 
+					}, {
+						name: 'Mad Max: Fury Road',
+						data: [16785100, 16314700, 12803200, 5385200, 5083800, 3974100, 3747200]
+					}, {
+						name: 'The Revenant',
+						data: [171800, 157600, 145200, 117800, 104400, 103600, 72100]
+					}, {
+						name: 'Batman v Superman',
+						data: [81558500, 50657100, 33791800, 15040500, 12180200, 8102400, 7742400]
+					}, {
+						name: 'Star Wars 7',
+						data: [119119300, 68294200, 60553200, 40109700, 37361700, 38022200, 27395700]
+					}]
+				}); 
+			});
 		</script>    
+    </head> 
+    <body> 
+    	<div id="container" style="width:100%; height:400px;"></div>
+        <div id="container2" style="width:100%; height:400px;"></div>
     	    	
     </body> 
 </html>
