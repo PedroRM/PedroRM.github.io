@@ -1,7 +1,7 @@
 <html> 
     <head> 
         <meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
-        <title> Gráfico de Barras </title> 
+        <title> Movies </title> 
         <!-- Inclusões das bibliotecas JavaScript para o Highcharts
  --> 
         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script> 
@@ -34,7 +34,13 @@
 					}, {
 						name: 'The Revenant',
 						data: [520236955, 183246933, 10447445, 2000409]
-					},
+					}, {
+						name: 'Batman v Superman',
+						data: [833080143, 311980143, 30612182, 7401888]
+					}, {
+						name: 'Star Wars 7',
+						data: [2065532841, 935832841, 27982311, 8650249]
+					}]
 				}); 
 			});
 		</script>    
