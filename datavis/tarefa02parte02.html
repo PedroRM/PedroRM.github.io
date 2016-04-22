@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html> 
+    <head> 
+        <<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title> Tarefa 02 </title> 
+        <!-- Inclusões das bibliotecas JavaScript para o Highcharts
+ --> 
+        <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script> 
+        <script src="http://code.highcharts.com/highcharts.js"></script>     	
+    	<script> 
+			$(function () {  
+				$('#container').highcharts({
+					chart: {
+						type: 'column'
+					},
+					title: {
+						text: 'Lucro por Genero'
+					},
+					
+
+					series: [{
+						name: 'Animation',
+						data: [143] 
+					}, {
+						name: 'Musical',
+						data: [103]
+					}, {
+						name: 'Thriller',
+						data: [77.3]
+					}, {
+						name: 'Action',
+						data: [65.5]
+					}, {
+						name: 'Romance',
+						data: [60.5]
+					}, {
+						name: 'Fantasy',
+						data: [57.3]
+					}, {
+						name: 'Biography',
+						data: [52.5]
+					}, {
+						name: 'Horror',
+						data: [40]
+					}, {
+						name: 'Comedy',
+						data: [38]
+					}, {
+						name: 'Adventure',
+						data: [36.5]
+					}]
+				}); 
+			});
+		</script>
+    	<script> 
+			$(function () {  
+				$('#container2').highcharts({
+					chart: {
+						type: 'column'
+					},
+					title: {
+						text: 'Comparação de Notas'
+					},
+					xAxis: {
+						categories: ['Up', 'Rotatouille', 'The Artist', 'The Hurt Locker', 'WALL-E', 'No Country For Old Man', 'The King Speech', 'Juno', 'Milk', 'The Blind Side']
+					},					
+
+					series: [{
+						name: 'Nota da Crítica',
+						data: [98, 97, 97, 97, 96, 95, 95, 94, 94, 65] 
+					}, {
+						name: 'Nota da Audiência',
+						data: [86, 84, 91, 83, 89, 84, 93, 89, 88, 90]
+					}]
+				}); 
+			});
+		</script>
+    </head> 
+    <body> 
+    	<div id="container" style="width:100%; height:400px;"></div>
+    	<p>Explicação:</p>
+    	<p>No gráfico acima, o objetivo é visualizar quais gêneros proporcionam mais lucro (que é calculado da forma: bilheteria - gastos).</p>
+    	<div id="container2" style="width:100%; height:400px;"></div>
+    	<p>Explicação:</p>
+    	<p>No gráfico acima podemos observar algumas diferenças entre as opiniões dos críticos e da audiência.</p>
+    	<p>Maiores Dificuldades:</p>
+    	<p>Ter que digitar cada elemento manualmente. Trabalhar na mudança de cores utilizando o Tableau.</p>
+    	    	
+    </body> 
+</html>
