@@ -3,15 +3,15 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Filmes Ordenados</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>Tarefa de sala D3</title>
+    <link rel="stylesheet" href="styles.css">
     <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 </head>
 
 <body>
-<div id="gross">Bilheteria</div>
-<div id="budget">Orçamento</div>
-<div id="profit">Lucro</div>
+<div id="bilheteria">Ordenacao por Bilheteria</div>
+<div id="despesa">Ordenacao por Orçamento</div>
+<div id="lucro">Ordenacao por Lucro</div>
 <script type="text/javascript">
     function render(data, comparator, id, width, weight, color) {
         d3.select(id).selectAll("div.h-bar")
@@ -19,11 +19,9 @@
             .enter().append("div")
             .attr("class", "h-bar")
             .append("span");
-
         d3.select(id).selectAll("div.h-bar")
                 .data(data)
             .exit().remove();
-
         d3.select(id).selectAll("div.h-bar")
                 .data(data)
             .attr("class", "h-bar")
@@ -45,21 +43,19 @@
                 .selectAll("div.h-bar")
                 .sort(comparator);
     }
-
-    var compareByGross = function (a, b) {
+    var comparePorBilheteria = function (a, b) {
         return a.Worldwide_Gross_M > b.Worldwide_Gross_M?-1:1;
     };
-    var compareByBudget = function (a, b) {
+    var comparePorDespesa = function (a, b) {
         return a.Budget_M > b.Budget_M?-1:1;
     };
-    var compareByProfit = function (a, b) {
+    var comparePorLucro = function (a, b) {
         return (a.Worldwide_Gross_M - a.Budget_M) > (b.Worldwide_Gross_M - b.Budget_M)?-1:1;
     };
-
     d3.json("movies.json", function(error, json){
-        render(json, compareByGross, "#gross", "Worldwide_Gross_M", 3, "blue");
-        render(json, compareByBudget, "#budget", "Budget_M", 0.5, "red");
-        render(json, compareByProfit, "#profit", ["Worldwide_Gross_M","Budget_M"], 3, "orange");
+        render(json, comparePorBilheteria, "#bilheteria", "Worldwide_Gross_M", 3, '#3498db');
+        render(json, comparePorDespesa, "#despesa", "Budget_M", 0.5, "red");
+        render(json, comparePorLucro, "#lucro", ["Worldwide_Gross_M","Budget_M"], 3, "green");
     });
 </script>
 </body>
