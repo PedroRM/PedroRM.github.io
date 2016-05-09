@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>Tarefa sobre D3, DC e Crossfilter</title>
-    <link rel="stylesheet" href="css/dc.css">
+    <link rel="stylesheet" href="dc.css">
     <script src="js/crossfilter.js" charset="utf-8"></script>
     <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
     <script src="js/dc.js" charset="utf-8"></script>
